@@ -23,6 +23,10 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.mainTableView.reloadData()
+        }
+
         viewModel.getAllTeams()
     }
 
@@ -43,7 +47,7 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.teamCount
+        return viewModel.teamsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

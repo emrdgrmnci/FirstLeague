@@ -22,7 +22,7 @@ class MainViewModel {
 }
 
 extension MainViewModel: MainViewModelInterface {
-    var teamCount: Int {
+    var teamsCount: Int {
         return teams.count
     }
 
@@ -31,8 +31,18 @@ extension MainViewModel: MainViewModelInterface {
     }
 
     func getAllTeams() {
-        let url = URL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")!
-        service.getTeams(url: url) { [weak self] (teams) in
+        let headers = [
+            "content-type": "application/json",
+            "authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+        ]
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        service.getTeams() { [weak self] (teams) in
             self?.teams = teams?.result ?? []
             self?.delegate?.notifyTableView()
         }

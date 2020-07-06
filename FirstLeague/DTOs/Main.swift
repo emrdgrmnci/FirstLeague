@@ -9,12 +9,12 @@
 import Foundation
 
 // MARK: - Main
-struct Main: Codable {
-    let result: [Result]?
-    let success: Bool?
+struct Main : Codable {
+    let result : [Result]?
+    let success : Bool?
 
     enum CodingKeys: String, CodingKey {
-        case result
-        case success
+        case result = "result"
+        case success = "success"
     }
 }

@@ -77,10 +77,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="MEQ-w6-5gU"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AyQ-KI-VHc"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
