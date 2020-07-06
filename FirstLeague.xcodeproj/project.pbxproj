@@ -20,6 +20,7 @@
 		47D2474924B3324F004C75F2 /* MainViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2474824B3324F004C75F2 /* MainViewControllerBuilder.swift */; };
 		47D2474C24B33287004C75F2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2474B24B33287004C75F2 /* APIService.swift */; };
 		47D2475024B33315004C75F2 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2474F24B33315004C75F2 /* Typealias.swift */; };
+		47D2475224B33366004C75F2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2475124B33366004C75F2 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		47D2474824B3324F004C75F2 /* MainViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerBuilder.swift; sourceTree = "<group>"; };
 		47D2474B24B33287004C75F2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		47D2474F24B33315004C75F2 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		47D2475124B33366004C75F2 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +72,17 @@
 		47D2472724B32AA6004C75F2 /* FirstLeague */ = {
 			isa = PBXGroup;
 			children = (
-				47D2474D24B33305004C75F2 /* Common */,
-				47D2474A24B3327A004C75F2 /* Services */,
-				47D2474124B32F11004C75F2 /* DTOs */,
-				47D2473E24B32C20004C75F2 /* Views */,
-				47D2473C24B32AF8004C75F2 /* Modules */,
 				47D2472824B32AA6004C75F2 /* AppDelegate.swift */,
-				47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */,
-				47D2472E24B32AA6004C75F2 /* Main.storyboard */,
 				47D2473124B32AAA004C75F2 /* Assets.xcassets */,
-				47D2473324B32AAA004C75F2 /* LaunchScreen.storyboard */,
+				47D2474D24B33305004C75F2 /* Common */,
+				47D2474124B32F11004C75F2 /* DTOs */,
 				47D2473624B32AAA004C75F2 /* Info.plist */,
+				47D2473324B32AAA004C75F2 /* LaunchScreen.storyboard */,
+				47D2472E24B32AA6004C75F2 /* Main.storyboard */,
+				47D2473C24B32AF8004C75F2 /* Modules */,
+				47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */,
+				47D2474A24B3327A004C75F2 /* Services */,
+				47D2473E24B32C20004C75F2 /* Views */,
 			);
 			path = FirstLeague;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 				47D2472C24B32AA6004C75F2 /* MainViewController.swift */,
 				47D2474624B3313C004C75F2 /* MainContracts.swift */,
 				47D2474824B3324F004C75F2 /* MainViewControllerBuilder.swift */,
+				47D2475124B33366004C75F2 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				47D2474724B3313C004C75F2 /* MainContracts.swift in Sources */,
 				47D2474C24B33287004C75F2 /* APIService.swift in Sources */,
 				47D2472B24B32AA6004C75F2 /* SceneDelegate.swift in Sources */,
+				47D2475224B33366004C75F2 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

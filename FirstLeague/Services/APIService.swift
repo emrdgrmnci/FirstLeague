@@ -13,16 +13,53 @@ protocol APIServiceProtocol {
 }
 
 class APIService: APIServiceProtocol {
+    
     func getTeams(url: URL, completion: @escaping CallBack<Main?>) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(nil)
-            } else if let data = data {
-                let teamList = try? JSONDecoder().decode(Main.self, from: data)
-                completion(countryList)
-            }
-        }.resume()
+        let headers = [
+            "content-type": "application/json",
+            "authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+        ]
         
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=spor-toto-super-lig")! as URL,
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse)
+            }
+        })
+        dataTask.resume()
     }
 }
+
+/*
+ let headers = [
+ "content-type": "application/json",
+ "authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+ ]
+ 
+ let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/leaguesList")! as URL,
+ cachePolicy: .useProtocolCachePolicy,
+ timeoutInterval: 10.0)
+ request.httpMethod = "GET"
+ request.allHTTPHeaderFields = headers
+ 
+ let session = URLSession.shared
+ let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+ if (error != nil) {
+ print(error)
+ } else {
+ let httpResponse = response as? HTTPURLResponse
+ print(httpResponse)
+ }
+ })
+ 
+ dataTask.resume()
+ */

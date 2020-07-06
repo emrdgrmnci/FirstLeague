@@ -20,17 +20,4 @@ struct Result: Codable {
     let goalagainst: String?
     let goaldistance: String?
     let team: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case rank
-        case draw
-        case lose
-        case win
-        case play
-        case point
-        case goalfor
-        case goalagainst
-        case goaldistance
-        case team
-    }
 }

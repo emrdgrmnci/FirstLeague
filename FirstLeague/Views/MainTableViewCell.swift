@@ -21,10 +21,12 @@ class MainTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configure(with result: Result) {
+        rankLabel.text = result.rank
+        teamLabel.text = result.team
+        playLabel.text = result.play
+        goalDistanceLabel.text = result.goaldistance
+        pointLabel.text = result.point
     }
 
 }

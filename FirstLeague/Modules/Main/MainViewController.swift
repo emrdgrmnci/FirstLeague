@@ -9,6 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
     @IBOutlet weak var mainTableView: UITableView!
     
     var viewModel: MainViewModelInterface! {
@@ -19,22 +20,49 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainTableView.delegate = self
         mainTableView.dataSource = self
+
+        viewModel.getAllTeams()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        mainTableView.reloadData()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.viewWillDisappear()
     }
 }
 
-extension MainViewController: MainViewModelDelegate {
-
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return viewModel.teamCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
+            fatalError("MainTableViewCell not found")
+        }
+
+        let team = viewModel.team(index: indexPath.row)
+        cell.configure(with: team)
+
+        return cell
+
     }
 }
 
-
+extension MainViewController: MainViewModelDelegate {
+    func notifyTableView() {
+        DispatchQueue.main.async {
+            self.mainTableView.reloadData()
+        }
+    }
+}
