@@ -8,3 +8,16 @@
 
 import Foundation
 
+protocol MainViewModelInterface: class {
+    var delegate: MainViewModelDelegate? { get set }
+    var teamCount: Int { get }
+
+    func team(index: Int) -> Main
+    func getAllTeams()
+
+    func viewWillDisappear()
+}
+
+protocol MainViewModelDelegate: class {
+    func notifyTableView()
+}

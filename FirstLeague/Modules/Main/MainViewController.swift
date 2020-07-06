@@ -23,6 +23,10 @@ class MainViewController: UIViewController {
     }
 }
 
+extension MainViewController: MainViewModelDelegate {
+
+}
+
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 18
