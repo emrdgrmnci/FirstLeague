@@ -25,7 +25,7 @@ class MainTableViewCell: UITableViewCell {
         rankLabel.text = result.rank
         teamLabel.text = result.team
         playLabel.text = result.play
-        goalDistanceLabel.text = result.goaldistance
+        goalDistanceLabel.text = result.goalDistance
         pointLabel.text = result.point
     }
 

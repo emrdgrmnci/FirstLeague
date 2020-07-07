@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MainViewController: UIViewController {
     
@@ -23,9 +24,9 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.mainTableView.reloadData()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.mainTableView.reloadData()
+//        }
 
         viewModel.getAllTeams()
     }

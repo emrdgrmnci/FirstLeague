@@ -9,15 +9,15 @@
 import Foundation
 
 protocol APIServiceProtocol {
-    func getTeams(completion: @escaping CallBack<Main?>)
+    func getTeams(url: URLRequest, completion: @escaping CallBack<Main?>)
 }
 
 class APIService: APIServiceProtocol {
-    func getTeams(completion: @escaping CallBack<Main?>) {
+    func getTeams(url: URLRequest, completion: @escaping CallBack<Main?>) {
 
         let headers = [
-            "content-type": "application/json",
-            "authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+            "Content-Type": "application/json",
+            "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
         ]
 
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
@@ -26,7 +26,7 @@ class APIService: APIServiceProtocol {
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
-        URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 do {
                     let dataString = String(data: data, encoding: .utf8)

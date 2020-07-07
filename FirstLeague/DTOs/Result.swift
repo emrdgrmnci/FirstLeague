@@ -16,9 +16,9 @@ struct Result : Codable {
     let win : String?
     let play : String?
     let point : String?
-    let goalfor : String?
-    let goalagainst : String?
-    let goaldistance : String?
+    let goalFor : String?
+    let goalAgainst : String?
+    let goalDistance : String?
     let team : String?
 
     enum CodingKeys: String, CodingKey {
@@ -28,9 +28,9 @@ struct Result : Codable {
         case win = "win"
         case play = "play"
         case point = "point"
-        case goalfor = "goalFor"
-        case goalagainst = "goalAgainst"
-        case goaldistance = "goalDistance"
+        case goalFor = "goalfor"
+        case goalAgainst = "goalagainst"
+        case goalDistance = "goaldistance"
         case team = "team"
     }
 }

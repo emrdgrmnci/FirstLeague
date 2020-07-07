@@ -32,17 +32,17 @@ extension MainViewModel: MainViewModelInterface {
 
     func getAllTeams() {
         let headers = [
-            "content-type": "application/json",
-            "authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+            "Content-Type": "application/json",
+            "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
+        var request = URLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
-        service.getTeams() { [weak self] (teams) in
+        service.getTeams(url: request as URLRequest) { [weak self] (teams) in
             self?.teams = teams?.result ?? []
             self?.delegate?.notifyTableView()
         }
