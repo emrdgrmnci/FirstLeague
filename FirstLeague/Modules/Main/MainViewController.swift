@@ -12,7 +12,7 @@ import Foundation
 class MainViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
-    
+
     var viewModel: MainViewModelInterface! {
         didSet {
             viewModel.delegate = self
@@ -23,10 +23,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         mainTableView.delegate = self
         mainTableView.dataSource = self
-
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.mainTableView.reloadData()
-//        }
 
         viewModel.getAllTeams()
     }
@@ -56,7 +52,7 @@ extension MainViewController: UITableViewDataSource {
             fatalError("MainTableViewCell not found")
         }
 
-        let team = viewModel.team(index: indexPath.row)
+        let team = viewModel.teams(index: indexPath.row)
         cell.configure(with: team)
 
         return cell

@@ -12,7 +12,7 @@ protocol MainViewModelInterface: class {
     var delegate: MainViewModelDelegate? { get set }
     var teamsCount: Int { get }
 
-    func team(index: Int) -> Result
+    func teams(index: Int) -> Result
     func getAllTeams()
 
     func viewWillDisappear()

@@ -22,11 +22,12 @@ class MainViewModel {
 }
 
 extension MainViewModel: MainViewModelInterface {
+
     var teamsCount: Int {
         return teams.count
     }
 
-    func team(index: Int) -> Result {
+    func teams(index: Int) -> Result {
         return teams[index]
     }
 

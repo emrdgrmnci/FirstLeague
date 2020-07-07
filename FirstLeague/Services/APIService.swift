@@ -14,18 +14,6 @@ protocol APIServiceProtocol {
 
 class APIService: APIServiceProtocol {
     func getTeams(url: URLRequest, completion: @escaping CallBack<Main?>) {
-
-        let headers = [
-            "Content-Type": "application/json",
-            "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
-        ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 do {
