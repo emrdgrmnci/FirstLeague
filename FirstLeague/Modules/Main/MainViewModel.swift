@@ -9,10 +9,8 @@
 import Foundation
 
 class MainViewModel {
-
     weak var delegate: MainViewModelDelegate?
     private let service: APIServiceProtocol
-
     var teams: [Result]
 
     init(service: APIServiceProtocol) {
@@ -22,7 +20,6 @@ class MainViewModel {
 }
 
 extension MainViewModel: MainViewModelInterface {
-
     var teamsCount: Int {
         return teams.count
     }
@@ -37,7 +34,7 @@ extension MainViewModel: MainViewModelInterface {
             "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
         ]
 
-        var request = URLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
         request.httpMethod = "GET"
