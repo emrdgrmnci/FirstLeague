@@ -15,7 +15,6 @@ protocol MainViewModelInterface: class {
     func teams(index: Int) -> [Result]
     func loadTeams()
 
-    func viewWillDisappear()
 }
 
 protocol MainViewModelDelegate: class {

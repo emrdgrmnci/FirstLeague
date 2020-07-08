@@ -31,10 +31,6 @@ class MainViewController: UIViewController {
         super.viewWillAppear(true)
         mainTableView.reloadData()
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        viewModel.viewWillDisappear()
-    }
 }
 
 extension MainViewController: UITableViewDelegate {
