@@ -40,7 +40,7 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.teams.count
+        return viewModel.teamsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,8 +48,8 @@ extension MainViewController: UITableViewDataSource {
             fatalError("MainTableViewCell not found")
         }
 
-        let team = viewModel.teams[indexPath.row]
-//        let team = viewModel.teams(index: indexPath.row)
+
+        let team = viewModel.teams(index: indexPath.row)
         cell.configure(with: team)
 
         return cell

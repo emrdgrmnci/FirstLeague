@@ -12,7 +12,7 @@ class MainViewModel {
     weak var delegate: MainViewModelDelegate?
     private let service: APIServiceProtocol
     var teams: [Result]
-
+    
     init(service: APIServiceProtocol) {
         self.service = service
         self.teams = []
@@ -23,11 +23,11 @@ extension MainViewModel: MainViewModelInterface {
     var teamsCount: Int {
         return teams.count
     }
-
-    func teams(index: Int) -> [Result] {
-        return teams
+    
+    func teams(index: Int) -> Result {
+        return teams[index]
     }
-
+    
     func loadTeams() {
         let headers = [
             "Content-Type": "application/json",
@@ -40,13 +40,13 @@ extension MainViewModel: MainViewModelInterface {
         //                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
-
+        
         service.getTeams(url: request as URLRequest) { [weak self] (teams) in
             self?.teams = teams?.result ?? []
             self?.delegate?.teamsLoaded()
         }
     }
-
+    
     func viewWillDisappear() {
         delegate?.teamsLoaded()
     }
@@ -59,7 +59,7 @@ extension MainViewModel: MainViewModelInterface {
  let viewModel = NewsDetailViewModel(newsDetail: newsDetail)
  delegate?.navigate(to: .detail(viewModel))
  }
-
+ 
  var newsCount: Int {
  return news.count
  }
@@ -67,7 +67,7 @@ extension MainViewModel: MainViewModelInterface {
  func news(index: Int) -> News {
  return news[index]
  }
-
+ 
  func getAllNews() {
  let url = URL(string: "http://newsapi.org/v2/everything?q=corona&sortBy=publishedAt&apiKey=\(apiKey)")!
  service.getNews(url: url) { [weak self] (news) in
@@ -75,7 +75,7 @@ extension MainViewModel: MainViewModelInterface {
  self?.delegate?.notifyTableView()
  }
  }
-
+ 
  func viewWillDisappear() {
  delegate?.notifyTableView()
  }

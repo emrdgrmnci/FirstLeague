@@ -10,7 +10,8 @@ import Foundation
 
 protocol MainViewModelInterface: class {
     var delegate: MainViewModelDelegate? { get set }
-    var teams: [Result] { get }
+    var teamsCount: Int { get }
+    func teams(index: Int) -> Result
     func loadTeams()
 
 }
