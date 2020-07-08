@@ -24,30 +24,31 @@ extension MainViewModel: MainViewModelInterface {
         return teams.count
     }
 
-    func teams(index: Int) -> Result {
-        return teams[index]
+    func teams(index: Int) -> [Result] {
+        return teams
     }
 
-    func getAllTeams() {
+    func loadTeams() {
         let headers = [
             "Content-Type": "application/json",
             "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
         ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
-                                          cachePolicy: .useProtocolCachePolicy,
-                                          timeoutInterval: 10.0)
+        let url = URL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")
+        let request = NSMutableURLRequest(url: url!)
+        //            NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
+        //                                          cachePolicy: .useProtocolCachePolicy,
+        //                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
 
         service.getTeams(url: request as URLRequest) { [weak self] (teams) in
             self?.teams = teams?.result ?? []
-            self?.delegate?.notifyTableView()
+            self?.delegate?.teamsLoaded()
         }
     }
 
     func viewWillDisappear() {
-        delegate?.notifyTableView()
+        delegate?.teamsLoaded()
     }
 }
 

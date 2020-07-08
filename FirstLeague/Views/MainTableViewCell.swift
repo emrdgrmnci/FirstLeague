@@ -21,12 +21,12 @@ class MainTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(with result: Result) {
-        rankLabel.text = result.rank
-        teamLabel.text = result.team
-        playLabel.text = result.play
-        goalDistanceLabel.text = result.goalDistance
-        pointLabel.text = result.point
+    func configure(with result: [Result]) {
+        rankLabel.text = result[0].rank
+        teamLabel.text = result[0].team
+        playLabel.text = result[0].play
+        goalDistanceLabel.text = result[0].goalDistance
+        pointLabel.text = result[0].point
     }
 
 }

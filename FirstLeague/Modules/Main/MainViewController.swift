@@ -24,10 +24,11 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
 
-        viewModel.getAllTeams()
+        viewModel.loadTeams()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         mainTableView.reloadData()
     }
 
@@ -61,7 +62,7 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: MainViewModelDelegate {
-    func notifyTableView() {
+    func teamsLoaded() {
         DispatchQueue.main.async {
             self.mainTableView.reloadData()
         }

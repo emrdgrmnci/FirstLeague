@@ -12,12 +12,12 @@ protocol MainViewModelInterface: class {
     var delegate: MainViewModelDelegate? { get set }
     var teamsCount: Int { get }
 
-    func teams(index: Int) -> Result
-    func getAllTeams()
+    func teams(index: Int) -> [Result]
+    func loadTeams()
 
     func viewWillDisappear()
 }
 
 protocol MainViewModelDelegate: class {
-    func notifyTableView()
+    func teamsLoaded()
 }

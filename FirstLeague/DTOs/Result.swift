@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 // MARK: - Result
 struct Result : Codable {
     let rank : String?
