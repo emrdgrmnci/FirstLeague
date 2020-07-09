@@ -9,17 +9,12 @@
 import UIKit
 
 class MainViewControllerBuilder {
-
-    static func create() -> UIViewController {
-
-        // View controller
+    static func make() -> MainViewController {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let navigationController = storyBoard.instantiateViewController(identifier: "MainNavigationController") as! UINavigationController
-        let viewController = navigationController.viewControllers.first as! MainViewController
-
-        // View model
-        let viewModel = MainViewModel(service: APIService())
-        viewController.viewModel = viewModel
-        return viewController
+        let view = storyBoard.instantiateViewController(identifier: "MainViewController") as! MainViewController
+        let service = APIService()
+        let viewModel = MainViewModel(service: service)
+        view.viewModel = viewModel
+        return view
     }
 }

@@ -21,7 +21,7 @@ class ResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "TFF 1. LİG"
+        title = "SONUÇLAR"
 
         view.addSubview(tableView)
 
@@ -29,6 +29,8 @@ class ResultViewController: UIViewController {
         //        tableView.delegate = self
 
         makeTableViewUI()
+
+        viewModel.loadMatchs()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +41,7 @@ class ResultViewController: UIViewController {
     func makeTableViewUI() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
+        tableView.register(ResultTableViewCell.self, forCellReuseIdentifier: "ResultTableViewCell")
         tableView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(view)
         }
@@ -59,8 +61,8 @@ extension ResultViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? ResultTableViewCell else {
-            fatalError("MainTableViewCell not found")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ResultTableViewCell", for: indexPath) as? ResultTableViewCell else {
+            fatalError("ResultTableViewCell not found")
         }
         let match = viewModel.matchs(index: indexPath.row)
         cell.configure(with: match)
