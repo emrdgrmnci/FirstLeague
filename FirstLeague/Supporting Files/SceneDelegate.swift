@@ -25,8 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Initialize root view controller in the same way as all other
         // MVVM modules using builders
-        let rootNavigationController = UINavigationController(rootViewController: MainViewControllerBuilder.create())
-        self.window?.rootViewController = rootNavigationController
+        guard let _ = (scene as? UIWindowScene) else { return }
+        ((window?.rootViewController as? UITabBarController)?.viewControllers?.first as? UINavigationController)?.viewControllers = [MainViewControllerBuilder.make()]
+        ((window?.rootViewController as? UITabBarController)?.viewControllers![1] as? UINavigationController)?.viewControllers = [ResultViewControllerBuilder.make()]
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
