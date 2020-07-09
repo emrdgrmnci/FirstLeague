@@ -29,8 +29,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         title = "TFF 1. LİG"
-        navigationController?.navigationBar.prefersLargeTitles = true
-
+        
         view.addSubview(tableView)
 
         tableView.dataSource = self
