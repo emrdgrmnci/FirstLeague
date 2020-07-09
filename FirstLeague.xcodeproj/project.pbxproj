@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47D2307624B6EB2300A57AEB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D2307524B6EB2300A57AEB /* SnapKit.framework */; };
 		47D2472924B32AA6004C75F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472824B32AA6004C75F2 /* AppDelegate.swift */; };
 		47D2472B24B32AA6004C75F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */; };
 		47D2472D24B32AA6004C75F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472C24B32AA6004C75F2 /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47D2307524B6EB2300A57AEB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		47D2472524B32AA6004C75F2 /* FirstLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D2472824B32AA6004C75F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D2307624B6EB2300A57AEB /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,14 @@
 				47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47D2307424B6EA7C00A57AEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47D2307524B6EB2300A57AEB /* SnapKit.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		47D2471C24B32AA5004C75F2 = {
@@ -83,6 +94,7 @@
 		47D2472724B32AA6004C75F2 /* FirstLeague */ = {
 			isa = PBXGroup;
 			children = (
+				47D2307424B6EA7C00A57AEB /* Frameworks */,
 				47C07E0C24B5C64E00E17729 /* Supporting Files */,
 				47D2474D24B33305004C75F2 /* Common */,
 				47D2474124B32F11004C75F2 /* DTOs */,
@@ -382,6 +394,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 554X8TL4T7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "FirstLeague/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -400,6 +416,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 554X8TL4T7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "FirstLeague/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
