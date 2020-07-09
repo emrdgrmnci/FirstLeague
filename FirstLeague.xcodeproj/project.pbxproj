@@ -85,7 +85,7 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		47D2307824B6FBE100A57AEB /* Detail */ = {
+		47D2307824B6FBE100A57AEB /* MainDetail */ = {
 			isa = PBXGroup;
 			children = (
 				47D2307924B6FBFA00A57AEB /* DetailViewController.swift */,
@@ -93,7 +93,7 @@
 				47D2307D24B6FF7A00A57AEB /* DetailContracts.swift */,
 				47D2308224B7011300A57AEB /* DetailControllerBuilder.swift */,
 			);
-			path = Detail;
+			path = MainDetail;
 			sourceTree = "<group>";
 		};
 		47D2307F24B6FFB700A57AEB /* Presentations */ = {
@@ -139,7 +139,7 @@
 		47D2473C24B32AF8004C75F2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				47D2307824B6FBE100A57AEB /* Detail */,
+				47D2307824B6FBE100A57AEB /* MainDetail */,
 				47D2473D24B32AFF004C75F2 /* Main */,
 			);
 			path = Modules;

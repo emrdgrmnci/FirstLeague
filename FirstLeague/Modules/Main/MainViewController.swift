@@ -10,8 +10,6 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-    
-    //    @IBOutlet weak var mainTableView: UITableView!
 
     let playedTitleLabel    = UILabel()
     let averageTitleLabel   = UILabel()
@@ -29,7 +27,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         title = "TFF 1. LİG"
-        
+
         view.addSubview(tableView)
 
         tableView.dataSource = self
@@ -55,7 +53,6 @@ class MainViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
-
         tableView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(view)
         }
@@ -65,7 +62,6 @@ class MainViewController: UIViewController {
         playedTitleLabel.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 320, bottom: 10, right: 0))
         }
-
         playedTitleLabel.textAlignment = NSTextAlignment.left
         playedTitleLabel.font = UIFont.systemFont(ofSize: 25)
         playedTitleLabel.backgroundColor = .black
@@ -92,13 +88,9 @@ extension MainViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainTableViewCell", for: indexPath) as? MainTableViewCell else {
             fatalError("MainTableViewCell not found")
         }
-
-
         let team = viewModel.teams(index: indexPath.row)
         cell.configure(with: team)
-
         return cell
-
     }
 }
 
