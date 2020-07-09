@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import SnapKit
 
 class DetailViewController: UIViewController {
-var detailViewModel: DetailViewModelInterface!
+    var detailViewModel: DetailViewModelInterface!
+    var team = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         detailViewModel.delegate = self
         detailViewModel.load()
+
+        view.addSubview(team)
+
+        team.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 120, bottom: 10, right: 0))
+        }
+
+        team.textAlignment = NSTextAlignment.left
+        team.font = UIFont.systemFont(ofSize: 25)
     }
 }
 
 extension DetailViewController: DetailViewModelDelegate {
     func prepareDetailViewInfos(_ presentation: DetailPresentation) {
-        title = presentation.teamsName
+        team.text = presentation.teamsName
     }
 }

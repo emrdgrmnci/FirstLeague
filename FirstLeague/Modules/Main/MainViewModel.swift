@@ -23,7 +23,7 @@ extension MainViewModel: MainViewModelInterface {
     func selectTeams(at index: Int) {
       let teamsDetail = teams[index]
         let viewModel = DetailViewModel(teamsDetail: teamsDetail)
-        
+         delegate?.navigate(to: .detail(viewModel))
     }
 
     var teamsCount: Int {

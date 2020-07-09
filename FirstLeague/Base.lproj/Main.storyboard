@@ -48,7 +48,7 @@
         <!--Detail View Controller-->
         <scene sceneID="5GL-Xm-iYY">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="Ajg-pe-Grm" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Ajg-pe-Grm" customClass="DetailViewController" customModule="FirstLeague" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JcA-LW-sfR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

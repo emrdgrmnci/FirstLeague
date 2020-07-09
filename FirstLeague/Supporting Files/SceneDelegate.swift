@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Initialize root view controller in the same way as all other
         // MVVM modules using builders
-        self.window?.rootViewController = MainViewControllerBuilder.create()
+        let rootNavigationController = UINavigationController(rootViewController: MainViewControllerBuilder.create())
+        self.window?.rootViewController = rootNavigationController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

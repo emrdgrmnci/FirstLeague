@@ -27,10 +27,32 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "TFF 1. LİG"
+        navigationController?.navigationBar.prefersLargeTitles = true
+
         view.addSubview(tableView)
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        makeTableViewUI()
+
+        view.addSubview(playedTitleLabel)
+        view.addSubview(averageTitleLabel)
+        view.addSubview(pointTitleLabel)
+
+         makeLabelUI()
+
+        viewModel.loadTeams()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+
+    func makeTableViewUI() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
@@ -38,11 +60,9 @@ class MainViewController: UIViewController {
         tableView.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(view)
         }
+    }
 
-        view.addSubview(playedTitleLabel)
-        view.addSubview(averageTitleLabel)
-        view.addSubview(pointTitleLabel)
-
+    func makeLabelUI() {
         playedTitleLabel.snp.makeConstraints { (make) -> Void in
             make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 320, bottom: 10, right: 0))
         }
@@ -54,13 +74,6 @@ class MainViewController: UIViewController {
         averageTitleLabel.font = UIFont.systemFont(ofSize: 25)
         pointTitleLabel.textAlignment = NSTextAlignment.left
         pointTitleLabel.font = UIFont.systemFont(ofSize: 25)
-
-        viewModel.loadTeams()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        tableView.reloadData()
     }
 }
 
@@ -94,8 +107,9 @@ extension MainViewController: MainViewModelDelegate {
     func navigate(to route: TeamsViewRoute) {
         switch route {
         case .detail(let viewModel):
-            let viewController = DetailControllerBuilder.make(with: viewModel)
-            show(viewController, sender: nil)
+            let detailViewController = DetailControllerBuilder.make(with: viewModel)
+            detailViewController.modalPresentationStyle = .fullScreen
+            navigationController?.pushViewController(detailViewController, animated: true)
         }
     }
     
