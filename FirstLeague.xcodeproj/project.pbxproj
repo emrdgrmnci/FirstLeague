@@ -94,14 +94,14 @@
 		47D2472724B32AA6004C75F2 /* FirstLeague */ = {
 			isa = PBXGroup;
 			children = (
-				47D2307424B6EA7C00A57AEB /* Frameworks */,
-				47C07E0C24B5C64E00E17729 /* Supporting Files */,
 				47D2474D24B33305004C75F2 /* Common */,
 				47D2474124B32F11004C75F2 /* DTOs */,
+				47D2307424B6EA7C00A57AEB /* Frameworks */,
 				47D2473324B32AAA004C75F2 /* LaunchScreen.storyboard */,
 				47D2472E24B32AA6004C75F2 /* Main.storyboard */,
 				47D2473C24B32AF8004C75F2 /* Modules */,
 				47D2474A24B3327A004C75F2 /* Services */,
+				47C07E0C24B5C64E00E17729 /* Supporting Files */,
 				47D2473E24B32C20004C75F2 /* Views */,
 			);
 			path = FirstLeague;
@@ -177,6 +177,7 @@
 				47D2472124B32AA6004C75F2 /* Sources */,
 				47D2472224B32AA6004C75F2 /* Frameworks */,
 				47D2472324B32AA6004C75F2 /* Resources */,
+				47D2307724B6EF3400A57AEB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,6 +233,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47D2307724B6EF3400A57AEB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47D2472124B32AA6004C75F2 /* Sources */ = {

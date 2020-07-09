@@ -31,13 +31,10 @@ extension MainViewModel: MainViewModelInterface {
     func loadTeams() {
         let headers = [
             "Content-Type": "application/json",
-            "Authorization": "apikey 22fD7eXOwaKOcbYj6JN8qN:0Wwv5KWn8NvNbqPHDqlsgr"
+            "Authorization": "apikey 6o1ssdxqaWaSLfcgY0STmy:26x2yJ1yPDh1BZxQBMzYI0"
         ]
         let url = URL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")
         let request = NSMutableURLRequest(url: url!)
-        //            NSMutableURLRequest(url: NSURL(string: "https://api.collectapi.com/sport/league?data.league=tff-1-lig")! as URL,
-        //                                          cachePolicy: .useProtocolCachePolicy,
-        //                                          timeoutInterval: 10.0)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
@@ -51,35 +48,3 @@ extension MainViewModel: MainViewModelInterface {
         delegate?.teamsLoaded()
     }
 }
-
-/*
- extension NewsViewModel: NewsViewModelInterface {
- func selectNews(at index: Int) {
- let newsDetail = news[index]
- let viewModel = NewsDetailViewModel(newsDetail: newsDetail)
- delegate?.navigate(to: .detail(viewModel))
- }
- 
- var newsCount: Int {
- return news.count
- }
- 
- func news(index: Int) -> News {
- return news[index]
- }
- 
- func getAllNews() {
- let url = URL(string: "http://newsapi.org/v2/everything?q=corona&sortBy=publishedAt&apiKey=\(apiKey)")!
- service.getNews(url: url) { [weak self] (news) in
- self?.news = news?.news ?? []
- self?.delegate?.notifyTableView()
- }
- }
- 
- func viewWillDisappear() {
- delegate?.notifyTableView()
- }
- }
- */
-
-

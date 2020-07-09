@@ -11,7 +11,13 @@ import SnapKit
 
 class MainViewController: UIViewController {
     
-    @IBOutlet weak var mainTableView: UITableView!
+    //    @IBOutlet weak var mainTableView: UITableView!
+
+    let playedTitleLabel    = UILabel()
+    let averageTitleLabel   = UILabel()
+    let pointTitleLabel     = UILabel()
+
+    var tableView = UITableView()
 
     var viewModel: MainViewModelInterface! {
         didSet {
@@ -21,21 +27,39 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.delegate = self
-        mainTableView.dataSource = self
+        view.addSubview(tableView)
+
+        tableView.dataSource = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 70
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+
+        tableView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(view)
+        }
+
+        view.addSubview(playedTitleLabel)
+        view.addSubview(averageTitleLabel)
+        view.addSubview(pointTitleLabel)
+
+        playedTitleLabel.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 320, bottom: 10, right: 0))
+        }
+
+        playedTitleLabel.textAlignment = NSTextAlignment.left
+        playedTitleLabel.font = UIFont.systemFont(ofSize: 25)
+        playedTitleLabel.backgroundColor = .black
+        averageTitleLabel.textAlignment = NSTextAlignment.left
+        averageTitleLabel.font = UIFont.systemFont(ofSize: 25)
+        pointTitleLabel.textAlignment = NSTextAlignment.left
+        pointTitleLabel.font = UIFont.systemFont(ofSize: 25)
 
         viewModel.loadTeams()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        mainTableView.reloadData()
-    }
-}
-
-extension MainViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        tableView.reloadData()
     }
 }
 
@@ -61,7 +85,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: MainViewModelDelegate {
     func teamsLoaded() {
         DispatchQueue.main.async {
-            self.mainTableView.reloadData()
+            self.tableView.reloadData()
         }
     }
 }
