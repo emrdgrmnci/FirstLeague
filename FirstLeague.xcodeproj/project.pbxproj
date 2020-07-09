@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		47D2307624B6EB2300A57AEB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D2307524B6EB2300A57AEB /* SnapKit.framework */; };
+		47D2307A24B6FBFA00A57AEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2307924B6FBFA00A57AEB /* DetailViewController.swift */; };
+		47D2307C24B6FF3600A57AEB /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2307B24B6FF3600A57AEB /* DetailViewModel.swift */; };
+		47D2307E24B6FF7A00A57AEB /* DetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2307D24B6FF7A00A57AEB /* DetailContracts.swift */; };
+		47D2308124B6FFCD00A57AEB /* DetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2308024B6FFCD00A57AEB /* DetailPresentation.swift */; };
+		47D2308324B7011400A57AEB /* DetailControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2308224B7011300A57AEB /* DetailControllerBuilder.swift */; };
 		47D2472924B32AA6004C75F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472824B32AA6004C75F2 /* AppDelegate.swift */; };
 		47D2472B24B32AA6004C75F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */; };
 		47D2472D24B32AA6004C75F2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2472C24B32AA6004C75F2 /* MainViewController.swift */; };
@@ -26,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		47D2307524B6EB2300A57AEB /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
+		47D2307924B6FBFA00A57AEB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		47D2307B24B6FF3600A57AEB /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		47D2307D24B6FF7A00A57AEB /* DetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContracts.swift; sourceTree = "<group>"; };
+		47D2308024B6FFCD00A57AEB /* DetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresentation.swift; sourceTree = "<group>"; };
+		47D2308224B7011300A57AEB /* DetailControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerBuilder.swift; sourceTree = "<group>"; };
 		47D2472524B32AA6004C75F2 /* FirstLeague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstLeague.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47D2472824B32AA6004C75F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47D2472A24B32AA6004C75F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,25 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		47D2307824B6FBE100A57AEB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				47D2307924B6FBFA00A57AEB /* DetailViewController.swift */,
+				47D2307B24B6FF3600A57AEB /* DetailViewModel.swift */,
+				47D2307D24B6FF7A00A57AEB /* DetailContracts.swift */,
+				47D2308224B7011300A57AEB /* DetailControllerBuilder.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		47D2307F24B6FFB700A57AEB /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				47D2308024B6FFCD00A57AEB /* DetailPresentation.swift */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
 		47D2471C24B32AA5004C75F2 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +139,7 @@
 		47D2473C24B32AF8004C75F2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				47D2307824B6FBE100A57AEB /* Detail */,
 				47D2473D24B32AFF004C75F2 /* Main */,
 			);
 			path = Modules;
@@ -154,6 +184,7 @@
 		47D2474D24B33305004C75F2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				47D2307F24B6FFB700A57AEB /* Presentations */,
 				47D2474E24B33308004C75F2 /* Typealias */,
 			);
 			path = Common;
@@ -263,11 +294,16 @@
 				47D2474524B32F4C004C75F2 /* Result.swift in Sources */,
 				47D2474324B32F36004C75F2 /* Main.swift in Sources */,
 				47D2472D24B32AA6004C75F2 /* MainViewController.swift in Sources */,
+				47D2307A24B6FBFA00A57AEB /* DetailViewController.swift in Sources */,
+				47D2307E24B6FF7A00A57AEB /* DetailContracts.swift in Sources */,
 				47D2472924B32AA6004C75F2 /* AppDelegate.swift in Sources */,
+				47D2308324B7011400A57AEB /* DetailControllerBuilder.swift in Sources */,
 				47D2475024B33315004C75F2 /* Typealias.swift in Sources */,
+				47D2308124B6FFCD00A57AEB /* DetailPresentation.swift in Sources */,
 				47D2474024B32C35004C75F2 /* MainTableViewCell.swift in Sources */,
 				47D2474924B3324F004C75F2 /* MainViewControllerBuilder.swift in Sources */,
 				47D2474724B3313C004C75F2 /* MainContracts.swift in Sources */,
+				47D2307C24B6FF3600A57AEB /* DetailViewModel.swift in Sources */,
 				47D2474C24B33287004C75F2 /* APIService.swift in Sources */,
 				47D2472B24B32AA6004C75F2 /* SceneDelegate.swift in Sources */,
 				47D2475224B33366004C75F2 /* MainViewModel.swift in Sources */,

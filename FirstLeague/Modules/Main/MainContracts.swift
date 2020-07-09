@@ -12,10 +12,16 @@ protocol MainViewModelInterface: class {
     var delegate: MainViewModelDelegate? { get set }
     var teamsCount: Int { get }
     func teams(index: Int) -> Result
+    func selectTeams(at index: Int)
     func loadTeams()
 
 }
 
 protocol MainViewModelDelegate: class {
     func teamsLoaded()
+     func navigate(to route: TeamsViewRoute)
+}
+
+enum TeamsViewRoute {
+    case detail(DetailViewModelInterface)
 }

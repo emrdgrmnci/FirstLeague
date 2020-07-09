@@ -20,6 +20,12 @@ class MainViewModel {
 }
 
 extension MainViewModel: MainViewModelInterface {
+    func selectTeams(at index: Int) {
+      let teamsDetail = teams[index]
+        let viewModel = DetailViewModel(teamsDetail: teamsDetail)
+        
+    }
+
     var teamsCount: Int {
         return teams.count
     }

@@ -30,6 +30,7 @@ class MainViewController: UIViewController {
         view.addSubview(tableView)
 
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
@@ -63,6 +64,13 @@ class MainViewController: UIViewController {
     }
 }
 
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.selectTeams(at: indexPath.row)
+    }
+}
+
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.teamsCount
@@ -83,6 +91,14 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: MainViewModelDelegate {
+    func navigate(to route: TeamsViewRoute) {
+        switch route {
+        case .detail(let viewModel):
+            let viewController = DetailControllerBuilder.make(with: viewModel)
+            show(viewController, sender: nil)
+        }
+    }
+    
     func teamsLoaded() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
