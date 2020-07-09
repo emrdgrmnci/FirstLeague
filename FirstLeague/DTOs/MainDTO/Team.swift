@@ -10,7 +10,7 @@ import Foundation
 
 
 // MARK: - Result
-struct Result : Codable {
+struct Team : Codable {
     let rank : String?
     let draw : String?
     let lose : String?

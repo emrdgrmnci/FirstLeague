@@ -11,7 +11,7 @@ import Foundation
 struct DetailPresentation {
     let teamsName: String
 
-    init(teams: Result) {
+    init(teams: Team) {
         teamsName = teams.team ?? "ALTAY"
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Main
 struct Main : Codable {
-    let result : [Result]?
+    let result : [Team]?
     let success : Bool?
 
     enum CodingKeys: String, CodingKey {

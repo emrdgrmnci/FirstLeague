@@ -16,7 +16,7 @@ class DetailViewModel: DetailViewModelInterface {
         delegate?.prepareDetailViewInfos(presentation)
     }
 
-    init(teamsDetail: Result) {
+    init(teamsDetail: Team) {
         self.presentation = DetailPresentation(teams: teamsDetail)
     }
 }

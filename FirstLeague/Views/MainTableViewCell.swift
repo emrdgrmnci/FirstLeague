@@ -62,7 +62,7 @@ class MainTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(with result: Result) {
+    func configure(with result: Team) {
         rankLabel.text = result.rank
         teamLabel.text = result.team
         playLabel.text = result.play

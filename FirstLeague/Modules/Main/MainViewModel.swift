@@ -11,7 +11,7 @@ import Foundation
 class MainViewModel {
     weak var delegate: MainViewModelDelegate?
     private let service: APIServiceProtocol
-    var teams: [Result]
+    var teams: [Team]
     
     init(service: APIServiceProtocol) {
         self.service = service
@@ -30,7 +30,7 @@ extension MainViewModel: MainViewModelInterface {
         return teams.count
     }
     
-    func teams(index: Int) -> Result {
+    func teams(index: Int) -> Team {
         return teams[index]
     }
     
