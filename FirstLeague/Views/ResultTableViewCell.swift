@@ -27,27 +27,31 @@ class ResultTableViewCell: UITableViewCell {
         dateLabel.textAlignment = NSTextAlignment.left
         dateLabel.font = UIFont.systemFont(ofSize: 12)
         homeLabel.textAlignment = NSTextAlignment.left
-        homeLabel.font = UIFont.systemFont(ofSize: 19)
+        homeLabel.font = UIFont.systemFont(ofSize: 15)
+        homeLabel.lineBreakMode = .byTruncatingTail
         scoreLabel.textAlignment = NSTextAlignment.left
-        scoreLabel.font = UIFont.systemFont(ofSize: 19)
+        scoreLabel.font = UIFont.systemFont(ofSize: 15)
         awayLabel.textAlignment = NSTextAlignment.left
-        awayLabel.font = UIFont.systemFont(ofSize: 19)
+        awayLabel.font = UIFont.systemFont(ofSize: 15)
+        awayLabel.lineBreakMode = .byTruncatingTail
         contentView.addSubview(dateLabel)
         contentView.addSubview(homeLabel)
         contentView.addSubview(scoreLabel)
         contentView.addSubview(awayLabel)
 
         dateLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 0, left: 70, bottom: 10, right: 0))
+
         }
         homeLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 30, left: 20, bottom: 10, right: 0))
         }
         scoreLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 285, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 30, left: 140, bottom: 10, right: 0))
+
         }
         awayLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 315, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 30, left: 180, bottom: 10, right: -5))
         }
     }
 

@@ -98,11 +98,11 @@
             </objects>
             <point key="canvasLocation" x="2671.875" y="111.97183098591549"/>
         </scene>
-        <!--Item-->
+        <!--TABLO-->
         <scene sceneID="OzW-bQ-dha">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="VQK-uA-RzJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="w2X-q8-qgj"/>
+                    <tabBarItem key="tabBarItem" title="TABLO" image="table" catalog="system" id="w2X-q8-qgj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JgA-DF-Vr4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -117,11 +117,11 @@
             </objects>
             <point key="canvasLocation" x="990" y="111.97183098591549"/>
         </scene>
-        <!--Item-->
+        <!--SONUÇ-->
         <scene sceneID="gPX-Gk-4lJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFR-zV-fLZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YsZ-ob-3ge"/>
+                    <tabBarItem key="tabBarItem" title="SONUÇ" image="sportscourt" catalog="system" id="YsZ-ob-3ge"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EiA-6U-S8M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -155,4 +155,8 @@
             <point key="canvasLocation" x="-9.375" y="459.50704225352115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sportscourt" catalog="system" width="128" height="83"/>
+        <image name="table" catalog="system" width="128" height="93"/>
+    </resources>
 </document>

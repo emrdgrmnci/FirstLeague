@@ -10,11 +10,6 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
-
-    let playedTitleLabel    = UILabel()
-    let averageTitleLabel   = UILabel()
-    let pointTitleLabel     = UILabel()
-
     var tableView = UITableView()
 
     var viewModel: MainViewModelInterface! {
@@ -35,12 +30,6 @@ class MainViewController: UIViewController {
 
         makeTableViewUI()
 
-        view.addSubview(playedTitleLabel)
-        view.addSubview(averageTitleLabel)
-        view.addSubview(pointTitleLabel)
-
-         makeLabelUI()
-
         viewModel.loadTeams()
     }
 
@@ -57,25 +46,27 @@ class MainViewController: UIViewController {
             make.edges.equalTo(view)
         }
     }
-
-    func makeLabelUI() {
-        playedTitleLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view).inset(UIEdgeInsets(top: 10, left: 320, bottom: 10, right: 0))
-        }
-        playedTitleLabel.textAlignment = NSTextAlignment.left
-        playedTitleLabel.font = UIFont.systemFont(ofSize: 25)
-        playedTitleLabel.backgroundColor = .black
-        averageTitleLabel.textAlignment = NSTextAlignment.left
-        averageTitleLabel.font = UIFont.systemFont(ofSize: 25)
-        pointTitleLabel.textAlignment = NSTextAlignment.left
-        pointTitleLabel.font = UIFont.systemFont(ofSize: 25)
-    }
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         viewModel.selectTeams(at: indexPath.row)
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "O     A     P"
+    }
+
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = .systemFont(ofSize: 13)
+        header.textLabel?.textAlignment = .right
     }
 }
 

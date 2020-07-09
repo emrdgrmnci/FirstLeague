@@ -21,15 +21,15 @@ class MainTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         rankLabel.textAlignment = NSTextAlignment.left
-        rankLabel.font = UIFont.systemFont(ofSize: 19)
+        rankLabel.font = UIFont.systemFont(ofSize: 12)
         teamLabel.textAlignment = NSTextAlignment.left
-        teamLabel.font = UIFont.systemFont(ofSize: 19)
+        teamLabel.font = UIFont.systemFont(ofSize: 15)
         playLabel.textAlignment = NSTextAlignment.left
-        playLabel.font = UIFont.systemFont(ofSize: 19)
+        playLabel.font = UIFont.systemFont(ofSize: 13)
         goalDistanceLabel.textAlignment = NSTextAlignment.left
-        goalDistanceLabel.font = UIFont.systemFont(ofSize: 19)
+        goalDistanceLabel.font = UIFont.systemFont(ofSize: 13)
         pointLabel.textAlignment = NSTextAlignment.left
-        pointLabel.font = UIFont.systemFont(ofSize: 19)
+        pointLabel.font = UIFont.systemFont(ofSize: 13)
         contentView.addSubview(rankLabel)
         contentView.addSubview(teamLabel)
         contentView.addSubview(playLabel)
@@ -43,13 +43,13 @@ class MainTableViewCell: UITableViewCell {
             make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 30, bottom: 10, right: 0))
         }
         playLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 285, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 235, bottom: 10, right: 0))
         }
         goalDistanceLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 315, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 265, bottom: 10, right: 0))
         }
         pointLabel.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 345, bottom: 10, right: 0))
+            make.edges.equalTo(contentView).inset(UIEdgeInsets(top: 10, left: 295, bottom: 10, right: 0))
         }
     }
 

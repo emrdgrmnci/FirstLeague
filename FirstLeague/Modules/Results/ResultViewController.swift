@@ -26,7 +26,7 @@ class ResultViewController: UIViewController {
         view.addSubview(tableView)
 
         tableView.dataSource = self
-        //        tableView.delegate = self
+        tableView.delegate = self
 
         makeTableViewUI()
 
@@ -48,12 +48,15 @@ class ResultViewController: UIViewController {
     }
 }
 
-//extension ResultViewController: UITableViewDelegate {
+extension ResultViewController: UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        tableView.deselectRow(at: indexPath, animated: true)
 //        viewModel.selectTeams(at: indexPath.row)
 //    }
-//}
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+}
 
 extension ResultViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
