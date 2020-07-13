@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import FirstLeague
 
 class FirstLeagueTests: XCTestCase {
 
@@ -23,11 +24,17 @@ class FirstLeagueTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testRetrieveTeams() {
+        let main = Main(result: [], success: <#T##Bool?#>)
+        let team = Team(from: <#Decoder#>)
+//        let school = School(students: [])
+//        school.retrieveAlumni { result in
+//            switch result {
+//            case .success(let alumni):
+//                XCTAssertEqual(alumni.count, 2)
+//            case .failure:
+//                XCTFail()
+//            }
+//        }
     }
-
 }

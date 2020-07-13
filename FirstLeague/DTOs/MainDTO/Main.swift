@@ -10,11 +10,17 @@ import Foundation
 
 // MARK: - Main
 struct Main : Codable {
-    let result : [Team]?
+    let teams : [Team]?
     let success : Bool?
 
     enum CodingKeys: String, CodingKey {
-        case result = "result"
+        case teams = "result"
         case success = "success"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        teams = try values.decodeIfPresent([Team].self, forKey: .teams)
+        success = try values.decodeIfPresent(Bool.self, forKey: .success)
     }
 }

@@ -45,7 +45,7 @@ extension MainViewModel: MainViewModelInterface {
         request.allHTTPHeaderFields = headers
         
         service.getTeams(url: request as URLRequest) { [weak self] (teams) in
-            self?.teams = teams?.result ?? []
+            self?.teams = teams?.teams ?? []
             self?.delegate?.teamsLoaded()
         }
     }

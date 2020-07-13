@@ -33,5 +33,4 @@ struct Result : Codable {
 		away = try values.decodeIfPresent(String.self, forKey: .away)
 		home = try values.decodeIfPresent(String.self, forKey: .home)
 	}
-
 }
