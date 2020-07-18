@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4762B21824C2F32A0040B2F2 /* team.json in Resources */ = {isa = PBXBuildFile; fileRef = 4762B21724C2F32A0040B2F2 /* team.json */; };
 		478B4ABD24BC69E60041E205 /* FirstLeagueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B4ABC24BC69E60041E205 /* FirstLeagueTests.swift */; };
 		47D2307624B6EB2300A57AEB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47D2307524B6EB2300A57AEB /* SnapKit.framework */; };
 		47D2307A24B6FBFA00A57AEB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D2307924B6FBFA00A57AEB /* DetailViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4762B21724C2F32A0040B2F2 /* team.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = team.json; sourceTree = "<group>"; };
 		478B4ABA24BC69E60041E205 /* FirstLeagueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstLeagueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		478B4ABC24BC69E60041E205 /* FirstLeagueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLeagueTests.swift; sourceTree = "<group>"; };
 		478B4ABE24BC69E60041E205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,9 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4762B21624C2F3020040B2F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4762B21724C2F32A0040B2F2 /* team.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		478B4ABB24BC69E60041E205 /* FirstLeagueTests */ = {
 			isa = PBXGroup;
 			children = (
+				4762B21624C2F3020040B2F2 /* Resources */,
 				478B4ABC24BC69E60041E205 /* FirstLeagueTests.swift */,
 				478B4ABE24BC69E60041E205 /* Info.plist */,
 			);
@@ -357,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4762B21824C2F32A0040B2F2 /* team.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

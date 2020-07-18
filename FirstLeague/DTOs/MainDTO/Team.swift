@@ -35,17 +35,17 @@ struct Team : Codable {
         case team = "team"
     }
 
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        rank = try values.decodeIfPresent(String.self, forKey: .rank)
-        draw         = try values.decodeIfPresent(String.self, forKey: .draw)
-        lose         = try values.decodeIfPresent(String.self, forKey: .lose)
-        win          = try values.decodeIfPresent(String.self, forKey: .win)
-        play         = try values.decodeIfPresent(String.self, forKey: .play)
-        point        = try values.decodeIfPresent(String.self, forKey: .point)
-        goalFor      = try values.decodeIfPresent(String.self, forKey: .goalFor)
-        goalAgainst  = try values.decodeIfPresent(String.self, forKey: .goalAgainst)
-        goalDistance = try values.decodeIfPresent(String.self, forKey: .goalDistance)
-        team         = try values.decodeIfPresent(String.self, forKey: .team)
-    }
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        rank = try values.decodeIfPresent(String.self, forKey: .rank)
+//        draw         = try values.decodeIfPresent(String.self, forKey: .draw)
+//        lose         = try values.decodeIfPresent(String.self, forKey: .lose)
+//        win          = try values.decodeIfPresent(String.self, forKey: .win)
+//        play         = try values.decodeIfPresent(String.self, forKey: .play)
+//        point        = try values.decodeIfPresent(String.self, forKey: .point)
+//        goalFor      = try values.decodeIfPresent(String.self, forKey: .goalFor)
+//        goalAgainst  = try values.decodeIfPresent(String.self, forKey: .goalAgainst)
+//        goalDistance = try values.decodeIfPresent(String.self, forKey: .goalDistance)
+//        team         = try values.decodeIfPresent(String.self, forKey: .team)
+//    }
 }

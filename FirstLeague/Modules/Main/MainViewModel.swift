@@ -46,6 +46,7 @@ extension MainViewModel: MainViewModelInterface {
         
         service.getTeams(url: request as URLRequest) { [weak self] (teams) in
             self?.teams = teams?.teams ?? []
+            print(teams!)
             self?.delegate?.teamsLoaded()
         }
     }

@@ -23,6 +23,7 @@ class APIService: APIServiceProtocol {
             else if let data = data {
                 let mainList = try? JSONDecoder().decode(Main.self, from: data)
                 if let mainList = mainList {
+                    print(mainList)
                     completion(mainList)
                 }
             }
@@ -37,6 +38,7 @@ class APIService: APIServiceProtocol {
             else if let data = data {
                 let matchList = try? JSONDecoder().decode(MatchResult.self, from: data)
                 if let matchList = matchList {
+                    print(matchList)
                     completion(matchList)
                 }
             }
