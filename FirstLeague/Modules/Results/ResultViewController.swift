@@ -49,10 +49,6 @@ class ResultViewController: UIViewController {
 }
 
 extension ResultViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        viewModel.selectTeams(at: indexPath.row)
-//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
@@ -74,16 +70,6 @@ extension ResultViewController: UITableViewDataSource {
 }
 
 extension ResultViewController: ResultViewModelDelegate {
-
-//    func navigate(to route: ResultsViewRoute) {
-//        switch route {
-//        case .detail(let viewModel):
-//            let detailViewController = DetailControllerBuilder.make(with: viewModel)
-//            detailViewController.modalPresentationStyle = .fullScreen
-//            navigationController?.pushViewController(detailViewController, animated: true)
-//        }
-//    }
-
     func matchsLoaded() {
         DispatchQueue.main.async {
             self.tableView.reloadData()

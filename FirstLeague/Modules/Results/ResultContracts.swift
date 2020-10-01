@@ -12,14 +12,12 @@ protocol ResultViewModelInterface: class {
     var delegate: ResultViewModelDelegate? { get set }
     var matchsCount: Int { get }
     func matchs(index: Int) -> Result
-//    func selectMatchs(at index: Int)
     func loadMatchs()
 
 }
 
 protocol ResultViewModelDelegate: class {
     func matchsLoaded()
-//     func navigate(to route: ResultsViewRoute)
 }
 
 enum ResultsViewRoute {
